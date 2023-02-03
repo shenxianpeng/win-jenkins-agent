@@ -1,3 +1,4 @@
+@echo off
 
 set CURRENT_DIR=%cd%
 
@@ -9,3 +10,11 @@ tar -xf openjdk-11.0.2_windows-x64_bin.zip
 :download_agnet
 bitsadmin.exe /transfer "donwload jenkins-agent.exe" https://github.com/winsw/winsw/releases/download/v2.11.0/WinSW-x64.exe %CURRENT_DIR%\jenkins-agent.exe
 
+if "%1"=="" goto end
+
+:install_service
+jenkins-agent.exe install
+:start_service
+jenkins-agent.exe start
+
+:end
