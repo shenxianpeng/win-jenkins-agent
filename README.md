@@ -1,5 +1,7 @@
 # Semi-automatic setup of Jenkins Agent on Windows
 
+[![Test](https://github.com/shenxianpeng/win-jenkins-agent/actions/workflows/test.yml/badge.svg)](https://github.com/shenxianpeng/win-jenkins-agent/actions/workflows/test.yml)
+
 To config a windows agent as a Jenkins node is very annoying and often encounters various problems.
 
 I created this repository to make it easier to set up the Jenkins agent as a service on Windows.

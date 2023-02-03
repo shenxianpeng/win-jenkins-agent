@@ -1,8 +1,8 @@
-name: Main
+name: Test
 
 on:
   push:
-    branches: master
+    branches: main
   workflow_dispatch:
 
 jobs: 
@@ -11,6 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: test
+    - name: install test
       run: 
-        main.bat all
+        ./main.bat all
