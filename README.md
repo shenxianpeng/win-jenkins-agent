@@ -63,6 +63,18 @@ More commands to run
 C:\agent>jenkins-agent.exe --help
 ```
 
+## Setup autostart Jenkins agent service after Windows reboot
+
+Sometimes the jenkins agent service can not be start automatically after Windows reboot.
+
+Steps to find Startup folder: Click Windows + R -> type `shell:startup` -> click OK
+
+![startup](images/startup.png)
+
+Copy the batch file `jenkins-agent-restart.bat` to Windows Startup folder, it will restart service with command `jenkins-agent.exe restart`.
+
+![startup](images/startup-folder.png)
+
 ## References
 
 * How to Install Jenkins Agent on Windows YouTuBe [video](https://youtu.be/N8AQTlHoBKc)

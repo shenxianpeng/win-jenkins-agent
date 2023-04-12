@@ -1,6 +1,6 @@
 @echo off
 
-set CURRENT_DIR=%cd%
+set CURRENT_DIR="%CD%"
 
 :download_jdk11
 rem jdk-11.0.2
