@@ -11,6 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: install test
+    - name: install and start jenkins agent
       run: 
-        ./main.bat all
+        ./main.bat agent

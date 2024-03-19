@@ -1,27 +1,27 @@
-# Semi-automatic setup of Jenkins Agent on Windows
+# Configuring jenkins windows agent
 
-[![Test](https://github.com/shenxianpeng/win-jenkins-agent/actions/workflows/test.yml/badge.svg)](https://github.com/shenxianpeng/win-jenkins-agent/actions/workflows/test.yml)
+[![Test](https://github.com/shenxianpeng/jenkins-windows-agent/actions/workflows/test.yml/badge.svg)](https://github.com/shenxianpeng/jenkins-windows-agent/actions/workflows/test.yml)
 
-To config a windows agent as a Jenkins node is very annoying and often encounters various problems.
+To config a jenkins windows agent is very annoying and often encounters various problems.
 
-I created this repository to make it easier to set up the Jenkins agent as a service on Windows.
+This repository to make it easier to set up the Jenkins windows agent as a service on Windows.
 
 ## Getting started
 
 ### Download dependencies
 
-For example: if your Remote root directory of Windows agent is `C:\agent`
+For example: your Remote root directory of Windows agent is `C:\agent`
 
 Then just git clone this repo and run `main.bat` under Remote root directory.
 
 ```bat
 cd C:\agent
-git clone https://github.com/shenxianpeng/win-jenkins-agent.git && cd win-jenkins-agent
+git clone https://github.com/shenxianpeng/jenkins-windows-agent.git && cd jenkins-windows-agent
 
 main.bat
 ```
 
-### Manual update configuration
+### Manual update `jenkins-agent.xml`
 
 Before install `jenkins-agent.exe` as a service, you need to update `jenkins-agent.xml` following attributes.
 
@@ -35,13 +35,13 @@ Before install `jenkins-agent.exe` as a service, you need to update `jenkins-age
 
     You can find this arguments on Jenkins.
 
-    Node -> Configure -> Launch method, chose "Launch agent by connecting it to the master".
+    Node -> Configure -> Launch method, chose "**Launch agent by connecting it to the controller**".
 
     Then you will see ![arguments](images/arguments.png).
 
-### Register as a service
+### Install and start service
 
-Install as service
+Install jenkins agent as a service
 
 ```bat
 C:\agent>jenkins-agent.exe install
@@ -49,7 +49,7 @@ C:\agent>jenkins-agent.exe install
 2022-09-06 21:06:51,659 INFO  - Service 'Jenkins Agent for jenkins:8080 (jenkins8080agent)' was installed successfully.
 ```
 
-Start service
+Then start jenkins agnent service
 
 ```bat
 C:\agent>jenkins-agent.exe start
@@ -63,7 +63,7 @@ More commands to run
 C:\agent>jenkins-agent.exe --help
 ```
 
-## Setup autostart Jenkins agent service after Windows reboot
+## Start Jenkins agent service after reboot
 
 Sometimes the jenkins agent service can not be start automatically after Windows reboot.
 
