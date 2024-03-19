@@ -1,14 +1,16 @@
 @echo off
 
-set CURRENT_DIR="%CD%"
+set current_dir="%CD%"
+set "openjdk_url=https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_windows-x64_bin.zip"
+set "jenkins_agent_url=https://github.com/winsw/winsw/releases/download/v2.11.0/WinSW-x64.exe"
 
 :download_jdk11
 rem jdk-11.0.2
-bitsadmin.exe /transfer "donwnload jdk-11.0.2" https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_windows-x64_bin.zip  %CURRENT_DIR%\openjdk-11.0.2_windows-x64_bin.zip
+curl -o "%current_dir%\openjdk-11.0.2_windows-x64_bin.zip" "%openjdk_url%"
 tar -xf openjdk-11.0.2_windows-x64_bin.zip
 
-:download_agnet
-bitsadmin.exe /transfer "donwload jenkins-agent.exe" https://github.com/winsw/winsw/releases/download/v2.11.0/WinSW-x64.exe %CURRENT_DIR%\jenkins-agent.exe
+:download_agent
+curl -o "%current_dir%\jenkins-agent.exe" "%jenkins_agent_url%"
 
 if "%1"=="agent" goto end
 
