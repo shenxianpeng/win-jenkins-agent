@@ -4,9 +4,7 @@
 
 Configuring Jenkins Windows agent is very annoying and often encounters various problems. This repository makes it easier to set up the Jenkins Windows agent as a service on Windows.
 
-## Getting started
-
-### Download dependencies
+## Download dependencies
 
 For example: your Remote root directory of the Windows agent is `C:\agent`
 
@@ -19,7 +17,7 @@ git clone https://github.com/shenxianpeng/jenkins-windows-agent.git && cd jenkin
 main.bat
 ```
 
-### Manual update `jenkins-agent.xml`
+## Manual update `jenkins-agent.xml`
 
 Before installing `jenkins-agent.exe` as a service, you need to update `jenkins-agent.xml` following attributes.
 
@@ -37,7 +35,7 @@ Before installing `jenkins-agent.exe` as a service, you need to update `jenkins-
 
     Then you will see ![arguments](images/arguments.png).
 
-### Install and start service
+## Install and start service
 
 Install Jenkins Agent as a service
 
